@@ -105,8 +105,15 @@ func hitungTotal(produk []Produk, idProduks []int) float64 {
 
 func main() {
 	var jumlahProduk, jumlahPelanggan, jumlahTransaksi int
-	fmt.Print("Masukkan jumlah produk: ")
-	fmt.Scan(&jumlahProduk)
+	for {
+		fmt.Print("\nMasukan jumlah produk: ")
+		fmt.Scan(&jumlahProduk)
+		if jumlahProduk < 0 {
+			fmt.Println("Jumlah produk tidak boleh negatif. Silahkan coba lagi.")
+		} else {
+			break
+		}
+	}
 	daftarProduk := make([]Produk, jumlahProduk)
 	for i := 0; i < jumlahProduk; i++ {
 		fmt.Printf("Produk %d:\n", i+1)
@@ -117,8 +124,15 @@ func main() {
 		fmt.Scan(&daftarProduk[i].Harga)
 	}
 
+for {
 	fmt.Print("\nMasukkan jumlah pelanggan: ")
 	fmt.Scan(&jumlahPelanggan)
+	if jumlahPelanggan < 0 {
+		fmt.Println("Jumlah pelanggan tidak boleh negatif. Silahkan coba lagi. ")
+		} else {
+		break
+		}
+}
 	daftarPelanggan := make([]Pelanggan, jumlahPelanggan)
 	for i := 0; i < jumlahPelanggan; i++ {
 		daftarPelanggan[i].ID = i + 1
@@ -126,8 +140,15 @@ func main() {
 		fmt.Scan(&daftarPelanggan[i].Nama)
 	}
 
+for {
 	fmt.Print("\nMasukkan jumlah transaksi: ")
 	fmt.Scan(&jumlahTransaksi)
+	if jumlahTransaksi < 0 {
+		fmt.Println("Jumlah transaksi tidak boleh negatif. Silahkan coba lagi. ")
+	} else {
+		break
+	}
+}
 	daftarTransaksi := make([]Transaksi, jumlahTransaksi)
 	for i := 0; i < jumlahTransaksi; i++ {
 		trans := &daftarTransaksi[i]
